@@ -13,6 +13,16 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 
+import environ
+
+env = environ.Env()
+# reading .env file
+environ.Env.read_env()
+
+
+SECRET_KEY = env("SECRET_KEY", default="unsafe-secret-key")
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
