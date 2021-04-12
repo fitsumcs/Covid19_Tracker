@@ -13,5 +13,9 @@ response = requests.request("GET", url, headers=headers).json()
 
 # Create your views here.
 def helloWorld(request):
-    context = {'greeting': response['results']}
+    noCountries = response['results']
+    countryList = []
+    for i in range(0,noCountries):
+        countryList.append(response['response'][i]['country'])
+    context = {'countryList': countryList}
     return render(request,'hello.html',context)
