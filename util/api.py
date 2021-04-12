@@ -4,6 +4,7 @@ import environ
 
 env = environ.Env()
 
+# Get Covid Data
 def getCovidData():
     url = "https://covid-193.p.rapidapi.com/statistics"
     headers = {
@@ -26,6 +27,8 @@ def getContex(countryList,selectedCountry,noCountries):
             deathCases = totalCases - activeCases - recoveredCases
             context = {'selectedCountry' : selectedCountry,'countryList': countryList,'newCases': newCases,'activeCases': activeCases,'criticalCases': criticalCases,'recoveredCases': recoveredCases,'totalCases': totalCases,'deathCases': deathCases}
             return context
+
+# Get country lists
 def getCountryList(noCountries):
     countryList = []
     response = getCovidData()
