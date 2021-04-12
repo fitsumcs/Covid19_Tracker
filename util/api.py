@@ -26,3 +26,9 @@ def getContex(countryList,selectedCountry,noCountries):
             deathCases = totalCases - activeCases - recoveredCases
             context = {'selectedCountry' : selectedCountry,'countryList': countryList,'newCases': newCases,'activeCases': activeCases,'criticalCases': criticalCases,'recoveredCases': recoveredCases,'totalCases': totalCases,'deathCases': deathCases}
             return context
+def getCountryList(noCountries):
+    countryList = []
+    response = getCovidData()
+    for i in range(0,noCountries):
+        countryList.append(response['response'][i]['country'])
+    return countryList
