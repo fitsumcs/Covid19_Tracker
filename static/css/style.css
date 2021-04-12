@@ -1,0 +1,11 @@
+body{
+    background-color: black;
+  }
+  .box{
+box-sizing: border-box;
+border: 3px solid transparent;
+background-clip:padding-box;
+}
+.col-md-2{
+padding: 1rem;
+}
