@@ -12,37 +12,42 @@
   </head>
   <body>
 
-    <form action="" method="post">
-      {% csrf_token %}
-      <select name="countries" id="countries">
-        {% for country in countryList %}
-        <option value="{{ country }}">{{ country }}</option>
-        {% endfor %}
-      </select>
-      <input type="submit" value="Submit">
-    </form>
- 
-    <h2>
-      Country Selected : {{selectedCountry}}
-    </h2>
-    <p>
-      New Case  : {{newCases}}
-    </p>
-    <p>
-      Active Case  : {{activeCases}}
-    </p>
-    <p>
-      Critical Case  : {{criticalCases}}
-    </p>
-    <p>
-      Recovered Case  : {{recoveredCases }}
-    </p>
-    <p>
-      Total Case  : {{totalCases}}
-    </p>
-    <p>
-      Death Case  : {{deathCases}}
-    </p>   
+
+    <div class="container mt-3 ">
+      <form action="" method="post">
+        {% csrf_token %}
+        <select name="countries" id="countries">
+          {% for country in countryList %}
+          <option value="{{ country }}">{{ country }}</option>
+          {% endfor %}
+        </select>
+        <input type="submit" value="Submit">
+      </form>
+   
+      <h2>
+        Country Selected : {{selectedCountry}}
+      </h2>
+      <p>
+        New Case  : {{newCases}}
+      </p>
+      <p>
+        Active Case  : {{activeCases}}
+      </p>
+      <p>
+        Critical Case  : {{criticalCases}}
+      </p>
+      <p>
+        Recovered Case  : {{recoveredCases }}
+      </p>
+      <p>
+        Total Case  : {{totalCases}}
+      </p>
+      <p>
+        Death Case  : {{deathCases}}
+      </p> 
+    </div>
+
+   
 
 
 
