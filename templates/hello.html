@@ -15,6 +15,11 @@
     body{
       background-color: black;
     }
+    .box{
+  box-sizing: border-box;
+  border: 3px solid transparent;
+  background-clip:padding-box;
+}
   </style>
 
 
@@ -52,24 +57,53 @@
       <h4 class="text-info">
         Country Selected : {{selectedCountry}}
       </h4>
-      <p>
-        New Case  : {{newCases}}
-      </p>
-      <p>
-        Active Case  : {{activeCases}}
-      </p>
-      <p>
-        Critical Case  : {{criticalCases}}
-      </p>
-      <p>
-        Recovered Case  : {{recoveredCases }}
-      </p>
-      <p>
-        Total Case  : {{totalCases}}
-      </p>
-      <p>
-        Death Case  : {{deathCases}}
-      </p> 
+      <div class="row ml-2">
+
+        <div class="col-md-2 box bg-light">
+          <h1>{{newCases}}</h1>
+          <p>
+            New Case   
+          </p>
+        </div>
+        <div class="col-md-2 box bg-info">
+          <h1>{{activeCases}}</h1>
+          <p>
+            Active Case  
+          </p>
+        </div>
+        <div class="col-md-2 box bg-danger">
+          <h1>{{criticalCases}}</h1>
+          <p>
+            Critical Case  
+          </p>
+        </div>
+        <div class="col-md-2 box bg-light">
+          <h1>{{recoveredCases }}</h1>
+          <p>
+            Recovered Case  
+          </p>
+        </div>
+        <div class="col-md-2 box bg-light">
+          <h1>{{totalCases}}</h1>
+          <p>
+            Total Case   
+          </p>
+        </div>
+        <div class="col-md-2  box bg-light">
+         <h1>{{deathCases}}</h1> 
+          <p>
+            Death Case 
+          </p> 
+        </div>
+        
+
+      </div>
+ 
+  
+  
+  
+   
+ 
     </div>
 
    
