@@ -1,14 +1,14 @@
 from django.shortcuts import render
 import requests
 import json
-from util import getCovidData
+from util.api import getCovidData
 
 
 # Get Covid Data 
 response = getCovidData()
 
 # Create your views here.
-def helloWorld(request):
+def covidDisplay(request):
     noCountries = response['results']
     countryList = []
     for i in range(0,noCountries):
