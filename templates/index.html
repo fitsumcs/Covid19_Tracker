@@ -6,7 +6,8 @@
 
         <div class="col-md-6">
             <select class="form-control mb-3 " name="countries" id="countries">
-                  {% for country in countryList %}
+                <option value="{{ selectedCountry }}">{{ selectedCountry }}</option>  
+                {% for country in countryList %}
                   <option value="{{ country }}">{{ country }}</option>
                   {% endfor %}
                 </select>
