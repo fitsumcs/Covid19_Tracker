@@ -13,6 +13,9 @@ response = requests.request("GET", url, headers=headers).json()
 
 # Create your views here.
 def helloWorld(request):
+    if request.method == "POST":
+        selectedCountry = request.POST['countries']
+        print(selectedCountry)
     noCountries = response['results']
     countryList = []
     for i in range(0,noCountries):

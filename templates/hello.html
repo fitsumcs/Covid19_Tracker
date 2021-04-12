@@ -12,11 +12,16 @@
   </head>
   <body>
 
-    <select name="countries" id="countries">
-      {% for country in countryList %}
-      <option value="{{ country }}">{{ country }}</option>
-      {% endfor %}
-    </select>
+    <form action="" method="post">
+      {% csrf_token %}
+      <select name="countries" id="countries">
+        {% for country in countryList %}
+        <option value="{{ country }}">{{ country }}</option>
+        {% endfor %}
+      </select>
+      <input type="submit" value="Submit">
+    </form>
+ 
 
 
 
