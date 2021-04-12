@@ -16,7 +16,7 @@ def covidDisplay(request):
     if request.method == "POST":
         selectedCountry = request.POST['countries']
         context = getContex(countryList,selectedCountry,noCountries)
-        return render(request,'hello.html',context)
+        return render(request,'index.html',context)
 
     context = {'countryList': countryList}
-    return render(request,'hello.html',context)
+    return render(request,'index.html',context)

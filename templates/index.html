@@ -1,0 +1,65 @@
+{% extends "base.html" %} {% load static %} {% block main %}
+
+<form class="row g-2 mt-4" action="" method="post">
+    {% csrf_token %}
+    <div class="row">
+
+        <div class="col-md-6">
+            <select class="form-control mb-3 " name="countries" id="countries">
+                  {% for country in countryList %}
+                  <option value="{{ country }}">{{ country }}</option>
+                  {% endfor %}
+                </select>
+        </div>
+        <div class="col-md-6">
+            <input class="btn btn-danger" type="submit" value="Submit">
+        </div>
+    </div>
+</form>
+
+<h4 class="text-info">
+    Country Selected : {{selectedCountry}}
+</h4>
+
+<div class="row ml-2">
+
+    <div class="col-md-2 box bg-light">
+        <h4>{{totalCases}}</h4>
+        <p>
+            Total Case
+        </p>
+    </div>
+    <div class="col-md-2 box bg-primary text-light">
+        <h4>{{newCases}}</h4>
+        <p>
+            New Case
+        </p>
+    </div>
+    <div class="col-md-2 box  bg-secondary text-white">
+        <h4>{{activeCases}}</h4>
+        <p>
+            Active Case
+        </p>
+    </div>
+    <div class="col-md-2 box  bg-warning">
+        <h4>{{criticalCases}}</h4>
+        <p>
+            Critical Case
+        </p>
+    </div>
+    <div class="col-md-2 box bg-success text-light">
+        <h4>{{recoveredCases }}</h4>
+        <p>
+            Recovered Case
+        </p>
+    </div>
+    <div class="col-md-2  box bg-danger">
+        <h4>{{deathCases}}</h4>
+        <p>
+            Death Case
+        </p>
+    </div>
+
+</div>
+
+{% endblock %}
