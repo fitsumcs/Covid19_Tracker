@@ -11,9 +11,12 @@
     <title>Covid19 Tracker</title>
   </head>
   <body>
-    {% for country in countryList %}
-    <p>{{ country }}</p>
-    {% endfor %}
+
+    <select name="countries" id="countries">
+      {% for country in countryList %}
+      <option value="{{ country }}">{{ country }}</option>
+      {% endfor %}
+    </select>
 
 
 
