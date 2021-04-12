@@ -11,6 +11,7 @@ response = getCovidData()
 def covidDisplay(request):
     noCountries = response['results']
     countryList = getCountryList(noCountries)
+    countryList = sorted(countryList)
     
     if request.method == "POST":
         selectedCountry = request.POST['countries']
