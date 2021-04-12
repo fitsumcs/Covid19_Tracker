@@ -14,9 +14,11 @@ response = requests.request("GET", url, headers=headers).json()
 # Create your views here.
 def helloWorld(request):
     noCountries = response['results']
+    countryList = []
+    for i in range(0,noCountries):
+        countryList.append(response['response'][i]['country'])
     if request.method == "POST":
         selectedCountry = request.POST['countries']
-        print(selectedCountry)
         for i in range(0,noCountries):
             if selectedCountry == response['response'][i]['country']:
                 newCases = response['response'][i]['cases']['new']
@@ -25,11 +27,8 @@ def helloWorld(request):
                 recoveredCases = response['response'][i]['cases']['recovered']
                 totalCases = response['response'][i]['cases']['total']
                 deathCases = totalCases - activeCases - recoveredCases
-                print(deathCases)
-        context = {'newCases': newCases,'activeCases': activeCases,'criticalCases': criticalCases,'recoveredCases': recoveredCases,'totalCases': totalCases,'deathCases': deathCases}
-   
-    countryList = []
-    for i in range(0,noCountries):
-        countryList.append(response['response'][i]['country'])
+        context = {'selectedCountry' : selectedCountry,'countryList': countryList,'newCases': newCases,'activeCases': activeCases,'criticalCases': criticalCases,'recoveredCases': recoveredCases,'totalCases': totalCases,'deathCases': deathCases}
+        return render(request,'hello.html',context)
+
     context = {'countryList': countryList}
     return render(request,'hello.html',context)
