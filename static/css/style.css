@@ -1,12 +1,17 @@
-body{
+body {
     background-color: black;
-  }
-  .box{
-box-sizing: border-box;
-border: 3px solid transparent;
-background-clip:padding-box;
 }
-.space{
 
-  margin-top: 14rem;
+.box {
+    box-sizing: border-box;
+    border: 3px solid transparent;
+    background-clip: padding-box;
+}
+
+.space {
+    margin-top: 14rem;
+}
+
+.col-md-2 h4 {
+    padding-top: 2rem;
 }
