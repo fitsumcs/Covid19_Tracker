@@ -30,23 +30,26 @@
     </nav>
     <div class="container mt-4 mr-0">
 
-      <div class="row">
-        <div class="col-md-6">
-
-        </div>
-        <div class="col-md-12">
-          <form action="" method="post">
+   
+       
+          <form class="row g-2 mt-4" action="" method="post">
             {% csrf_token %}
-            <select class="form-control mb-3 " name="countries" id="countries">
-              {% for country in countryList %}
-              <option value="{{ country }}">{{ country }}</option>
-              {% endfor %}
-            </select>
-            <input  class="btn btn-danger" type="submit" value="Submit">
-          </form> 
-        </div>
+            <div class="row">
 
-      </div>
+              <div class="col-md-6">
+                <select class="form-control mb-3 " name="countries" id="countries">
+                  {% for country in countryList %}
+                  <option value="{{ country }}">{{ country }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+              <div class="col-md-6">
+                <input  class="btn btn-danger" type="submit" value="Submit">
+              </div>
+            </div>
+          </form> 
+ 
+
    
    
       <h2>
