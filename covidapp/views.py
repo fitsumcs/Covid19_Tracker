@@ -13,5 +13,5 @@ response = requests.request("GET", url, headers=headers).json()
 
 # Create your views here.
 def helloWorld(request):
-    context = {'greeting': response}
+    context = {'greeting': response['results']}
     return render(request,'hello.html',context)
