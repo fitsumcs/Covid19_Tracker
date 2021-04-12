@@ -13,10 +13,21 @@ response = requests.request("GET", url, headers=headers).json()
 
 # Create your views here.
 def helloWorld(request):
+    noCountries = response['results']
     if request.method == "POST":
         selectedCountry = request.POST['countries']
         print(selectedCountry)
-    noCountries = response['results']
+        for i in range(0,noCountries):
+            if selectedCountry == response['response'][i]['country']:
+                newCases = response['response'][i]['cases']['new']
+                activeCases = response['response'][i]['cases']['active']
+                criticalCases = response['response'][i]['cases']['critical']
+                recoveredCases = response['response'][i]['cases']['recovered']
+                totalCases = response['response'][i]['cases']['total']
+                deathCases = totalCases - activeCases - recoveredCases
+                print(deathCases)
+        context = {'newCases': newCases,'activeCases': activeCases,'criticalCases': criticalCases,'recoveredCases': recoveredCases,'totalCases': totalCases,'deathCases': deathCases}
+   
     countryList = []
     for i in range(0,noCountries):
         countryList.append(response['response'][i]['country'])
