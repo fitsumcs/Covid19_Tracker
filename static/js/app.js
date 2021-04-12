@@ -1,5 +1,6 @@
 $(document).ready(function() {
     $('#countries').select2({
-        placeholder: 'Select a Country'
+        placeholder: 'Select a Country',
+        theme: "classic"
     });
 });

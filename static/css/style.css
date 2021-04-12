@@ -15,3 +15,7 @@ body {
 .col-md-2 h4 {
     padding-top: 2rem;
 }
+
+form {
+    margin-bottom: 2rem;
+}
