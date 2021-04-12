@@ -20,6 +20,9 @@
   border: 3px solid transparent;
   background-clip:padding-box;
 }
+.col-md-2{
+  padding: 1rem;
+}
   </style>
 
 
@@ -57,43 +60,44 @@
       <h4 class="text-info">
         Country Selected : {{selectedCountry}}
       </h4>
+
       <div class="row ml-2">
 
-        <div class="col-md-2 box bg-primary">
+        <div class="col-md-2 box bg-light">
+          <h1>{{totalCases}}</h1>
+          <h5>
+            Total Case   
+          </h5>
+        </div>
+        <div class="col-md-2 box bg-primary text-light">
           <h1>{{newCases}}</h1>
-          <p>
+          <h5>
             New Case   
-          </p>
+          </h5>
         </div>
-        <div class="col-md-2 box bg-warning">
+        <div class="col-md-2 box  bg-secondary text-white">
           <h1>{{activeCases}}</h1>
-          <p>
+          <h5>
             Active Case  
-          </p>
+          </h5>
         </div>
-        <div class="col-md-2 box bg-danger">
+        <div class="col-md-2 box  bg-warning">
           <h1>{{criticalCases}}</h1>
-          <p>
+          <h5>
             Critical Case  
-          </p>
+          </h5>
         </div>
         <div class="col-md-2 box bg-success text-light">
           <h1>{{recoveredCases }}</h1>
-          <p>
+          <h5>
             Recovered Case  
-          </p>
+          </h5>
         </div>
-        <div class="col-md-2 box bg-light">
-          <h1>{{totalCases}}</h1>
-          <p>
-            Total Case   
-          </p>
-        </div>
-        <div class="col-md-2  box bg-secondary text-white">
+        <div class="col-md-2  box bg-danger">
          <h1>{{deathCases}}</h1> 
-          <p>
+          <h5>
             Death Case 
-          </p> 
+          </h5> 
         </div>
         
 
